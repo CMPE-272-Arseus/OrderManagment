@@ -35,17 +35,19 @@ def upload_order(event, context):
             'storeId': newOrder['storeId'],
             'address': newOrder['address'],
             'orderdate': newOrder['orderdate'],
-            'zipcode': Decimal(str(newOrder['zipcode'])),
+            'zipcode': newOrder['zipcode'],
             'city': newOrder['city'],
             'province': newOrder['province'],
             'imageurl': newOrder['imageurl'],
             'trackingurl': newOrder['trackingurl'],
-            'phone': Decimal(str(newOrder['phone'])),
+            'phone': newOrder['phone'],
             'country': "The United States",
             'assigned':  "employee name",
             'statues': Decimal(str(0)),#0 initial, 1 in process, 2 finished
             'shipping': Decimal(str(0)),#0 Unkonw, 1 pre_transit, 2 transit 3 deliverd 4 returned 5 faliure
-            'trackingNumber': "None"
+            'trackingNumber': "None",
+            'orderTitle' : newOrder['orderTitle'],
+            'orderDescription': newOrder['orderDescription']
         }
     )
     print(response)
